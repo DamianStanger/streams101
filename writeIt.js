@@ -9,7 +9,10 @@ class WriteIt extends Writable {
 
   _write(obj, encoding, next) {
     console.log(`Write ${obj.id}`);
-    next();
+    setTimeout(function(){
+      console.log(`finished ${obj.id}`);
+      next();
+      }, 1000);
   }
 }
 

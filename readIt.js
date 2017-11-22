@@ -5,7 +5,7 @@ class ReadIt extends Readable {
     options.objectMode=true;
     super(options);
     
-    this.max = 100;
+    this.max = 40;
     this.index = 1;
   }
 
