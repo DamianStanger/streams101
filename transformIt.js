@@ -8,7 +8,7 @@ class TransformIt extends Transform {
   }
 
   _transform(obj, encoding, next) {
-    console.log(`Transform ${obj.id}`);
+    console.log(`++++ ${obj.id} Transform`);
     this.push(obj);
     next();
   }

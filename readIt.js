@@ -10,7 +10,7 @@ class ReadIt extends Readable {
   }
 
   _read() {
-    console.log(`Read ${this.index}`);
+    console.log(`++ ${this.index} Read`);
 
     if (this.index > this.max) {
       this.push(null);
