@@ -7,6 +7,8 @@ class ReadIt extends Readable {
     
     this.max = 40;
     this.index = 1;
+
+    console.log(`++ READ Start - ${new Date()}`)
   }
 
   _read() {
@@ -18,6 +20,11 @@ class ReadIt extends Readable {
       this.push({id: this.index, max: this.max});
       this.index++;
     }
+  }
+
+  _final(callBack) {
+    console.log(`++++++ READ Final - ${new Date()}`)
+    callBack();
   }
 }
 

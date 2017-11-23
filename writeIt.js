@@ -5,6 +5,27 @@ const MAX_LIMIT = 5;
 const ASYNC_DELAY = 500;
 
 
+const callSync = function () {
+  let inProgress = 0;
+  let total = 0;
+
+  function callSync(obj, next) {
+    inProgress++;
+    total++;
+
+    function syncDone() {
+      console.log(`------ ${obj.id} - ${inProgress}:${total} Write finished, calling next()`);
+      inProgress--;
+      next();
+    }
+
+    setTimeout(syncDone, ASYNC_DELAY);
+  }
+
+  return callSync;
+}();
+
+
 const callAsync = function () {
   let inProgress = 0;
   let total = 0;
@@ -27,13 +48,13 @@ const callAsync = function () {
         }
         nextUsed = true;
       }
-    };
+    }
 
     function asyncDone() {
-      console.log(`------ ${obj.id} Write finished`);
+      console.log(`------ ${obj.id} - ${inProgress}:${total} Write finished`);
       inProgress--;
       nextCallBack();
-    };
+    }
 
     setTimeout(asyncDone, ASYNC_DELAY);
     nextCallBack();
@@ -52,7 +73,17 @@ class WriteIt extends Writable {
 
   _write(obj, encoding, next) {
     console.log(`++++++ ${obj.id} Write`);
-    callAsync(obj, next);
+
+    //Comment in and out the following 2 lines to toggle between sync and async write behavior
+    //----------------------------------------------------------------------------------------
+
+    // callAsync(obj, next);
+    callSync(obj, next);
+  }
+
+  _final(callBack) {
+    console.log(`++++++ WRITE Final - ${new Date()}`)
+    callBack();
   }
 }
 

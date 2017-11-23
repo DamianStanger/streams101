@@ -12,6 +12,16 @@ class TransformIt extends Transform {
     this.push(obj);
     next();
   }
+
+  _end(callBack) {
+    console.log(`++++++ TRANSFORM End - ${new Date()}`)
+    callBack();
+  }
+
+  _final(callBack) {
+    console.log(`++++ TRANSFORM Final - ${new Date()}`)
+    callBack();
+  }
 }
 
 module.exports = TransformIt;
