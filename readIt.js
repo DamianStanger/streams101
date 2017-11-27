@@ -22,10 +22,6 @@ class ReadIt extends Readable {
     }
   }
 
-  _final(callBack) {
-    console.log(`++++++ READ Final - ${new Date()}`)
-    callBack();
-  }
 }
 
 module.exports = ReadIt;

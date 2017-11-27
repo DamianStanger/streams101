@@ -1,5 +1,7 @@
 const {Transform} = require("stream");
 
+
+
 class TransformIt extends Transform {
 
   constructor(options) {
@@ -13,15 +15,14 @@ class TransformIt extends Transform {
     next();
   }
 
-  _end(callBack) {
-    console.log(`++++++ TRANSFORM End - ${new Date()}`)
-    callBack();
-  }
-
   _final(callBack) {
-    console.log(`++++ TRANSFORM Final - ${new Date()}`)
+    console.log(`++++ TRANSFORM Final - ${new Date()}`);
     callBack();
   }
 }
 
 module.exports = TransformIt;
+
+
+
+

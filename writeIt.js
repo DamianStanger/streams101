@@ -2,7 +2,7 @@ const {Writable} = require("stream");
 
 
 const MAX_LIMIT = 5;
-const ASYNC_DELAY = 500;
+const ASYNC_DELAY = 800;
 
 
 const callSync = function () {
@@ -77,8 +77,8 @@ class WriteIt extends Writable {
     //Comment in and out the following 2 lines to toggle between sync and async write behavior
     //----------------------------------------------------------------------------------------
 
-    // callAsync(obj, next);
-    callSync(obj, next);
+    callAsync(obj, next);
+    // callSync(obj, next);
   }
 
   _final(callBack) {
