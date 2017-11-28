@@ -53,7 +53,7 @@ class WriteItAsync extends Writable {
   }
 
   _final(callBack) {
-    console.log(`++++++ WRITE Final - ${new Date()}`)
+    console.log(`++++++++++ WRITE Final - ${new Date()}`)
     callBack();
   }
 }

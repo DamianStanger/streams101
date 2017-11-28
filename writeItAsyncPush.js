@@ -18,14 +18,14 @@ function listenForData(readStream) {
 
         if (inProgress >= MAX_LIMIT) {
           readStream.pause();
-          console.log(`------ ${obj.id} - ${inProgress}:${total} Write paused   0`);
+          console.log(`       ${obj.id} - ${inProgress}:${total} Write paused   0`);
           setTimeout(recursiveDone, ASYNC_DELAY);
         } else {
           readStream.resume();
           const DO_WORK_FOR = 100 + (Math.random() * 900);
           setTimeout(asyncDone, DO_WORK_FOR);
           inProgress++;
-          console.log(`------ ${obj.id} - ${inProgress}:${total} Write resumed   1`);
+          console.log(`       ${obj.id} - ${inProgress}:${total} Write resumed   1`);
         }
       }
 
