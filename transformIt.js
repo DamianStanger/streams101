@@ -16,7 +16,7 @@ class TransformIt extends Transform {
   }
 
   _final(callBack) {
-    console.log(`++++ TRANSFORM Final - ${new Date()}`);
+    console.log(`++++++++++ TRANSFORM Final - ${new Date()}`);
     callBack();
   }
 }
