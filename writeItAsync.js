@@ -1,29 +1,6 @@
 const {Writable} = require("stream");
 
-
 const MAX_LIMIT = 5;
-const ASYNC_DELAY = 800;
-
-
-const callSync = function () {
-  let inProgress = 0;
-  let total = 0;
-
-  function callSync(obj, next) {
-    inProgress++;
-    total++;
-
-    function syncDone() {
-      console.log(`------ ${obj.id} - ${inProgress}:${total} Write finished, calling next()`);
-      inProgress--;
-      next();
-    }
-
-    setTimeout(syncDone, ASYNC_DELAY);
-  }
-
-  return callSync;
-}();
 
 
 const callAsync = function () {
@@ -31,9 +8,6 @@ const callAsync = function () {
   let total = 0;
 
   function callAsync(obj, next) {
-    inProgress++;
-    total++;
-
     let nextUsed = false;
 
     function nextCallBack() {
@@ -51,12 +25,15 @@ const callAsync = function () {
     }
 
     function asyncDone() {
-      console.log(`------ ${obj.id} - ${inProgress}:${total} Write finished`);
+      total++;
       inProgress--;
+      console.log(`------ ${obj.id} - ${inProgress}:${total} Write finished`);
       nextCallBack();
     }
 
-    setTimeout(asyncDone, ASYNC_DELAY);
+    const DO_WORK_FOR = 100 + (Math.random() * 900);
+    setTimeout(asyncDone, DO_WORK_FOR);
+    inProgress++;
     nextCallBack();
   }
 
@@ -64,8 +41,7 @@ const callAsync = function () {
 }();
 
 
-class WriteIt extends Writable {
-
+class WriteItAsync extends Writable {
   constructor(options) {
     options.objectMode = true;
     super(options);
@@ -73,12 +49,7 @@ class WriteIt extends Writable {
 
   _write(obj, encoding, next) {
     console.log(`++++++ ${obj.id} Write`);
-
-    //Comment in and out the following 2 lines to toggle between sync and async write behavior
-    //----------------------------------------------------------------------------------------
-
     callAsync(obj, next);
-    // callSync(obj, next);
   }
 
   _final(callBack) {
@@ -88,4 +59,4 @@ class WriteIt extends Writable {
 }
 
 
-module.exports = WriteIt;
+module.exports = WriteItAsync;
