@@ -7,16 +7,13 @@ const callSync = function () {
 
   function callSync(obj, next) {
     inProgress++;
+    console.log(`       ${obj.id} - ${inProgress}:${total} Write processing`);
+
     total++;
+    inProgress--;
+    console.log(`------ ${obj.id} - ${inProgress}:${total} Write finished, calling next()`);
 
-    function syncDone() {
-      console.log(`------ ${obj.id} - ${inProgress}:${total} Write finished, calling next()`);
-      inProgress--;
-      next();
-    }
-
-    const DO_WORK_FOR = 100 + (Math.random() * 900);
-    setTimeout(syncDone, DO_WORK_FOR);
+    next();
   }
 
   return callSync;

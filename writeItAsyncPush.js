@@ -8,29 +8,24 @@ function listenForData(readStream) {
 
   function runInProcessWatcher() {
     if (inProgress >= MAX_LIMIT) {
-      if (!readStream.isPaused()) {
-        readStream.pause();
-        console.log(`            ${inProgress}:${total} Write pausing    0`);
-      }
-      if (inProgress <= 1) {
-        console.log(`            ${inProgress}:${total} Write watching   2`);
-        setTimeout(runInProcessWatcher, ASYNC_DELAY);
-      }
+      readStream.pause();
+      console.log(`            ${inProgress}:${total} Write pausing    0`);
     } else {
       readStream.resume();
-      console.log(`            ${inProgress}:${total} Write resumed     1`);
+      console.log(`            ${inProgress}:${total} Write resumed    1`);
     }
   }
 
-  function callAsync(obj) {
+  function callAsync(obj, isSlowWrite) {
+    const DO_WORK_FOR = Math.round((100 + (Math.random() * 900)) + (isSlowWrite ? 1000 : 0));
+
     function asyncDone() {
       readStream.resume();
       inProgress--;
       total++;
-      console.log(`------ ${obj.id} - ${inProgress}:${total} Write finished   1`);
+      console.log(`------ ${obj.id} - ${inProgress}:${total} Write finished in ${DO_WORK_FOR}, resumed    1`);
     }
 
-    const DO_WORK_FOR = 100 + (Math.random() * 900);
     setTimeout(asyncDone, DO_WORK_FOR);
     inProgress++;
 
@@ -39,8 +34,9 @@ function listenForData(readStream) {
 
 
   readStream.on("data", data => {
-    console.log(`++++++ ${data.id} Write`);
-    callAsync(data);
+    const SLOW_WRITE = Math.random() * 1000 > 900; // one in ten will be a slow write
+    console.log(`++++++ ${data.id} Write ${SLOW_WRITE ? "- SLOW" : ""}`);
+    callAsync(data, SLOW_WRITE);
   });
 
   readStream.on("end", () => {
