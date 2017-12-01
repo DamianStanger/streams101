@@ -1,5 +1,8 @@
 const {Transform} = require("stream");
 
+const GREEN='\033[1;32m';
+const NO_COLOR='\033[0m';
+const DARK='\033[1;30m';
 
 
 class TransformIt extends Transform {
@@ -16,7 +19,7 @@ class TransformIt extends Transform {
   }
 
   _final(callBack) {
-    console.log(`++++++++++ TRANSFORM Final - ${new Date()}`);
+    console.log(`${GREEN}++++++++++ TRANSFORM Final - ${new Date()}${NO_COLOR}`);
     callBack();
   }
 }

@@ -1,6 +1,10 @@
 const {Readable} = require("stream");
 
 const MAX = 40;
+const GREEN='\033[1;32m';
+const NO_COLOR='\033[0m';
+const DARK='\033[1;30m';
+
 
 class ReadIt extends Readable {
   constructor(options) {
@@ -10,7 +14,7 @@ class ReadIt extends Readable {
     this.index = 0;
     this.doSlowReads = options.doSlowReads;
 
-    console.log(`++++++++++ READ Start - ${new Date()}`)
+    console.log(`${GREEN}++++++++++ READ Start - ${new Date()}${NO_COLOR}`)
   }
 
   _read() {
@@ -21,7 +25,7 @@ class ReadIt extends Readable {
 
     if (this.index > MAX) {
       this.push(null);
-      console.log(`++++++++++ READ End - ${new Date()}`)
+      console.log(`${GREEN}++++++++++ READ End - ${new Date()}${NO_COLOR}`)
     } else {
       let doWorkFor = Math.random() * 100;
       if (LONG_READ) {doWorkFor += 1400}

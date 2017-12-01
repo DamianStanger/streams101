@@ -1,5 +1,7 @@
 const MAX_LIMIT = 5;
-const ASYNC_DELAY = 500;
+const GREEN='\033[1;32m';
+const NO_COLOR='\033[0m';
+const DARK='\033[1;30m';
 
 
 function listenForData(readStream) {
@@ -9,10 +11,10 @@ function listenForData(readStream) {
   function runInProcessWatcher() {
     if (inProgress >= MAX_LIMIT) {
       readStream.pause();
-      console.log(`            ${inProgress}:${total} Write pausing    0`);
+      console.log(`${DARK}            ${inProgress}:${total} Write pausing    0${NO_COLOR}`);
     } else {
       readStream.resume();
-      console.log(`            ${inProgress}:${total} Write resumed    1`);
+      console.log(`${DARK}            ${inProgress}:${total} Write resumed    1${NO_COLOR}`);
     }
   }
 
@@ -40,7 +42,7 @@ function listenForData(readStream) {
   });
 
   readStream.on("end", () => {
-    console.log(`++++++++++ WRITE End - ${new Date()}`)
+    console.log(`${GREEN}++++++++++ WRITE Final - ${new Date()}${NO_COLOR}`);
   })
 }
 

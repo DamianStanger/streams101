@@ -1,5 +1,9 @@
 const {Writable} = require("stream");
 
+const GREEN='\033[1;32m';
+const NO_COLOR='\033[0m';
+const DARK='\033[1;30m';
+
 
 const callSync = function () {
   let inProgress = 0;
@@ -7,7 +11,7 @@ const callSync = function () {
 
   function callSync(obj, next) {
     inProgress++;
-    console.log(`       ${obj.id} - ${inProgress}:${total} Write processing`);
+    console.log(`${DARK}       ${obj.id} - ${inProgress}:${total} Write processing${NO_COLOR}`);
 
     total++;
     inProgress--;
@@ -33,7 +37,7 @@ class WriteItSync extends Writable {
   }
 
   _final(callBack) {
-    console.log(`++++++++++ WRITE Final - ${new Date()}`)
+    console.log(`${GREEN}++++++++++ WRITE Final - ${new Date()}${NO_COLOR}`)
     callBack();
   }
 }
