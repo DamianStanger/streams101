@@ -2,8 +2,8 @@ const ReadIt = require("./readIt");
 const TransformIt = require("./transformIt");
 const WriteItSync = require("./writeItSync");
 
-const readIt = new ReadIt({highWaterMark: 5, doSlowReads: false});
-const transformIt = new TransformIt({highWaterMark: 5});
-const writeItSync = new WriteItSync({highWaterMark: 5});
+const readIt = new ReadIt({highWaterMark: 2, doSlowReads: false});
+const transformIt = new TransformIt({highWaterMark: 2});
+const writeItSync = new WriteItSync({highWaterMark: 2});
 
 readIt.pipe(transformIt).pipe(writeItSync);
