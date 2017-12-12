@@ -30,9 +30,13 @@ class ReadIt extends Readable {
       let doWorkFor = Math.random() * 100;
       if (LONG_READ) {doWorkFor += 1400}
 
-      setTimeout(() => {
+      if(this.doSlowReads) {
         this.push({id: this.index, max: this.max});
-      }, this.doSlowReads ? doWorkFor: 0);
+      } else {
+        setTimeout(() => {
+          this.push({id: this.index, max: this.max});
+        }, doWorkFor);
+      }
     }
   }
 

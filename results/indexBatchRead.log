@@ -1,0 +1,91 @@
+➜  streams101 git:(master) ✗ node indexBatchRead.js
+
+++++++++++ READ Start - Tue Dec 12 2017 08:46:56 GMT+0000 (STD)
+++ 1 Read
+++ 1.01 Read Batch
+++ 1.02 Read Batch
+++ 1.03 Read Batch
+++ 1.04 Read Batch
+++ 1.05 Read Batch
+++ 2 Read
+++ 2.01 Read Batch
+++ 2.02 Read Batch
+++ 2.03 Read Batch
+++ 2.04 Read Batch
+++ 2.05 Read Batch
+++++ 1.01 Transform
+++++++ 1.01 Write
+++++ 1.02 Transform
+++++ 1.03 Transform
+++++ 1.04 Transform
+------ 1.01 - 1:1 Write finished in 815, calling next()
+++++++ 1.02 Write
+------ 1.02 - 1:2 Write finished in 254, calling next()
+++++ 1.05 Transform
+++++++ 1.03 Write
+++++ 2.01 Transform
+------ 1.03 - 1:3 Write finished in 971, calling next()
+++++++ 1.04 Write
+------ 1.04 - 1:4 Write finished in 435, calling next()
+++++ 2.02 Transform
+++++++ 1.05 Write
+++++ 2.03 Transform
+++ 3 Read
+++ 3.01 Read Batch
+++ 3.02 Read Batch
+++ 3.03 Read Batch
+++ 3.04 Read Batch
+++ 3.05 Read Batch
+------ 1.05 - 1:5 Write finished in 924, calling next()
+++++++ 2.01 Write
+------ 2.01 - 1:6 Write finished in 636, calling next()
+++++ 2.04 Transform
+++++++ 2.02 Write
+++++ 2.05 Transform
+------ 2.02 - 1:7 Write finished in 212, calling next()
+++++++ 2.03 Write
+------ 2.03 - 1:8 Write finished in 399, calling next()
+++++ 3.01 Transform
+++++++ 2.04 Write
+++++ 3.02 Transform
+++ 4 Read
+++ 4.01 Read Batch
+++ 4.02 Read Batch
+++ 4.03 Read Batch
+++ 4.04 Read Batch
+++ 4.05 Read Batch
+------ 2.04 - 1:9 Write finished in 243, calling next()
+++++++ 2.05 Write
+------ 2.05 - 1:10 Write finished in 760, calling next()
+++++ 3.03 Transform
+++++++ 3.01 Write
+++++ 3.04 Transform
+------ 3.01 - 1:11 Write finished in 151, calling next()
+++++++ 3.02 Write
+------ 3.02 - 1:12 Write finished in 301, calling next()
+++++ 3.05 Transform
+++++++ 3.03 Write - SLOW
+++++ 4.01 Transform
+------ 3.03 - 1:13 Write finished in 1494, calling next()
+++++++ 3.04 Write
+------ 3.04 - 1:14 Write finished in 684, calling next()
+++++ 4.02 Transform
+++++++ 3.05 Write
+++++ 4.03 Transform
+++ 5 Read
+++++++++++ READ End - Tue Dec 12 2017 08:47:05 GMT+0000 (STD)
+------ 3.05 - 1:15 Write finished in 180, calling next()
+++++++ 4.01 Write
+------ 4.01 - 1:16 Write finished in 856, calling next()
+++++ 4.04 Transform
+++++++ 4.02 Write - SLOW
+++++ 4.05 Transform
+++++++++++ TRANSFORM Final - Tue Dec 12 2017 08:47:06 GMT+0000 (STD)
+------ 4.02 - 1:17 Write finished in 1794, calling next()
+++++++ 4.03 Write - SLOW
+------ 4.03 - 1:18 Write finished in 1974, calling next()
+++++++ 4.04 Write
+------ 4.04 - 1:19 Write finished in 731, calling next()
+++++++ 4.05 Write
+------ 4.05 - 1:20 Write finished in 575, calling next()
+++++++++++ WRITE Final - Tue Dec 12 2017 08:47:11 GMT+0000 (STD)

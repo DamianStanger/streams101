@@ -1,7 +1,7 @@
 const {Readable} = require("stream");
 
-const MAX = 40;
-const BATCH = 10;
+const MAX = 20;
+const BATCH = 5;
 const GREEN = '\033[1;32m';
 const NO_COLOR = '\033[0m';
 const DARK = '\033[1;30m';
