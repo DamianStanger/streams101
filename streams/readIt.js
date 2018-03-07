@@ -1,5 +1,5 @@
 const {Readable} = require("stream");
-const {GREEN, NO_COLOR} = require("./consoleColors");
+const {GREEN, NO_COLOR} = require("../consoleColors");
 
 
 class ReadIt extends Readable {

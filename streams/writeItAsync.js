@@ -1,5 +1,5 @@
 const {Writable} = require("stream");
-const {GREEN, NO_COLOR, DARK} = require("./consoleColors");
+const {GREEN, NO_COLOR, DARK} = require("../consoleColors");
 
 const MAX_LIMIT = 5;
 

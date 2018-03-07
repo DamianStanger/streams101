@@ -1,5 +1,5 @@
 const {Transform} = require("stream");
-const {GREEN, NO_COLOR} = require("./consoleColors");
+const {GREEN, NO_COLOR} = require("../consoleColors");
 
 
 class TransformIt extends Transform {

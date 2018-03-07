@@ -1,6 +1,6 @@
-const ReadIt = require("./readIt");
-const TransformIt = require("./transformIt");
-const WriteItAsync = require("./writeItAsync");
+const ReadIt = require("./streams/readIt");
+const TransformIt = require("./streams/transformIt");
+const WriteItAsync = require("./streams/writeItAsync");
 
 const readIt = new ReadIt({highWaterMark: 5, doSlowReads: false, maxReads: 10});
 const transformIt = new TransformIt({highWaterMark: 5});
