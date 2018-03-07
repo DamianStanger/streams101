@@ -1,8 +1,5 @@
 const {Transform} = require("stream");
-
-const GREEN='\033[1;32m';
-const NO_COLOR='\033[0m';
-const DARK='\033[1;30m';
+const {GREEN, NO_COLOR} = require("./consoleColors");
 
 
 class TransformIt extends Transform {
@@ -14,13 +11,15 @@ class TransformIt extends Transform {
 
   _transform(obj, encoding, next) {
     console.log(`++++ ${obj.id} Transform`);
-    this.push(obj);
-    next();
+    let pushReturned = this.push(obj);
+    console.log(`++++ ${obj.id} Transform - push:${pushReturned?1:0}`);
+    let nextReturned = next();
+    console.log(`++++ ${obj.id} Transform - next:${nextReturned?1:0}`);
   }
 
   _final(callBack) {
-    console.log(`${GREEN}++++++++++ TRANSFORM Final - ${new Date()}${NO_COLOR}`);
     callBack();
+    console.log(`${GREEN}++++++++++ TRANSFORM Final - ${new Date()}${NO_COLOR}`);
   }
 }
 

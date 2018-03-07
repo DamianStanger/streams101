@@ -1,7 +1,6 @@
+const {GREEN, NO_COLOR, DARK} = require("./consoleColors");
+
 const MAX_LIMIT = 5;
-const GREEN='\033[1;32m';
-const NO_COLOR='\033[0m';
-const DARK='\033[1;30m';
 
 
 function listenForData(readStream) {

@@ -1,9 +1,5 @@
 const {Readable} = require("stream");
-
-const MAX = 40;
-const GREEN='\033[1;32m';
-const NO_COLOR='\033[0m';
-const DARK='\033[1;30m';
+const {GREEN, NO_COLOR} = require("./consoleColors");
 
 
 class ReadIt extends Readable {
@@ -13,28 +9,33 @@ class ReadIt extends Readable {
     
     this.index = 0;
     this.doSlowReads = options.doSlowReads;
+    this.maxReads = options.maxReads;
 
     console.log(`${GREEN}++++++++++ READ Start - ${new Date()}${NO_COLOR}`)
+  }
+
+  _buildMsg(id) {
+    return {id};
   }
 
   _read() {
     this.index++;
     const LONG_READ = (Math.random() * 1000) > 900;
 
-    console.log(`++ ${this.index} Read ${LONG_READ && this.doSlowReads ? "- SLOW": ""}`);
-
-    if (this.index > MAX) {
+    if (this.index > this.maxReads) {
       this.push(null);
       console.log(`${GREEN}++++++++++ READ End - ${new Date()}${NO_COLOR}`)
     } else {
       let doWorkFor = Math.random() * 100;
       if (LONG_READ) {doWorkFor += 1400}
 
-      if(this.doSlowReads) {
-        this.push({id: this.index, max: this.max});
+      if(!this.doSlowReads) {
+        let pushResult = this.push(this._buildMsg(this.index));
+        console.log(`++ ${this.index} Read push:${pushResult?1:0}`);
       } else {
         setTimeout(() => {
-          this.push({id: this.index, max: this.max});
+          let pushResult = this.push(this._buildMsg(this.index));
+          console.log(`++ ${this.index} Read${LONG_READ ? " - SLOW": ""} push:${pushResult?1:0}`);
         }, doWorkFor);
       }
     }

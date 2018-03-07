@@ -1,23 +1,33 @@
-➜  streams101 git:(master) node indexBackPressure.js
+➜  streams101 git:(master) ✗ node indexBackPressure.js
 
-++++++++++ READ Start - Tue Dec 12 2017 08:44:49 GMT+0000 (STD)
-++ 1 Read
+++++++++++ READ Start - Thu Dec 14 2017 09:03:03 GMT+0000 (STD)
+++ 1 Read push:1
+++ 2 Read push:1
 ++++ 1 Transform
-++ 2 Read
+++++ 1 Transform - push:1
+++++ 1 Transform - next:0
+++ 3 Read push:1
 ++++ 2 Transform
-++ 3 Read
+++++ 2 Transform - push:1
+++++ 2 Transform - next:0
+++ 4 Read push:1
 ++++ 3 Transform
-++ 4 Read
+++++ 3 Transform - push:1
+++++ 3 Transform - next:0
+++ 5 Read push:1
 ++++ 4 Transform
-++ 5 Read
+++++ 4 Transform - push:1
+++++ 4 Transform - next:0
+++ 6 Read push:1
 ++++ 5 Transform
-++ 6 Read
-++ 7 Read
-++ 8 Read
-++ 9 Read
-++ 10 Read
-++ 11 Read
-++ 12 Read
-++ 13 Read
-++ 14 Read
-++ 15 Read
+++++ 5 Transform - push:0
+++++ 5 Transform - next:0
+++ 7 Read push:1
+++ 8 Read push:1
+++ 9 Read push:1
+++ 10 Read push:1
+++ 11 Read push:1
+++ 12 Read push:1
+++ 13 Read push:1
+++ 14 Read push:1
+++ 15 Read push:0

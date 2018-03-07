@@ -1,10 +1,8 @@
 const {Readable} = require("stream");
+const {GREEN, NO_COLOR, DARK} = require("./consoleColors");
 
 const MAX = 20;
 const BATCH = 5;
-const GREEN = '\033[1;32m';
-const NO_COLOR = '\033[0m';
-const DARK = '\033[1;30m';
 
 
 class ReadIt extends Readable {
@@ -26,8 +24,8 @@ class ReadIt extends Readable {
     } else {
       for (let i = 1; i <= BATCH; i++) {
         const batchId = this.index + (0.01 * i);
-        console.log(`${DARK}++ ${batchId} Read Batch ${NO_COLOR}`);
-        this.push({id: batchId, currentIndex: this.index});
+        var pushResult = this.push({id: batchId, currentIndex: this.index});
+        console.log(`${DARK}++ ${batchId} Read Batch push:${pushResult?1:0}${NO_COLOR}`)
       }
     }
   }
