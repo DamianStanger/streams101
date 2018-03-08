@@ -1,4 +1,4 @@
-➜  streams101 git:(master) ✗ node indexSync.js
+➜  streams101 git:(master) ✗ node 01_indexSync.js
 
 ++++++++++ READ Start - Tue Mar 06 2018 17:31:14 GMT+0000 (STD)
 ++ 1 Read push:1

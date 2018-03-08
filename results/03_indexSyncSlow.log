@@ -1,4 +1,4 @@
-➜  streams101 git:(master) ✗ node indexSyncSlow.js
+➜  streams101 git:(master) ✗ node 03_indexSyncSlow.js
 
 ++++++++++ READ Start - Tue Mar 06 2018 18:00:46 GMT+0000 (STD)
 ++ 1 Read push:1

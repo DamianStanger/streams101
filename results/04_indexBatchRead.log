@@ -1,91 +1,130 @@
-➜  streams101 git:(master) ✗ node indexBatchRead.js
+➜  streams101 git:(master) ✗ node 04_indexBatchRead.js
 
-++++++++++ READ Start - Thu Dec 14 2017 09:04:41 GMT+0000 (STD)
-++ 1 Read
-++ 1.01 Read Batch  push:1
-++ 1.02 Read Batch  push:0
-++ 1.03 Read Batch  push:0
-++ 1.04 Read Batch  push:0
-++ 1.05 Read Batch  push:0
-++ 2 Read
-++ 2.01 Read Batch  push:0
-++ 2.02 Read Batch  push:0
-++ 2.03 Read Batch  push:0
-++ 2.04 Read Batch  push:0
-++ 2.05 Read Batch  push:0
-++++++ 1.01 Write
+++ 1 Read                         <---- #001
+++ 1.01 Read Batch push:1
+++ 1.02 Read Batch push:1
+++ 1.03 Read Batch push:1
+++ 1.04 Read Batch push:0
+++ 1.05 Read Batch push:0
+++ 2 Read                         <---- #002
+++ 2.01 Read Batch push:0
+++ 2.02 Read Batch push:0
+++ 2.03 Read Batch push:0
+++ 2.04 Read Batch push:0
+++ 2.05 Read Batch push:0
+++++ 1.01 Transform               <---- #003
+++++++ 1.01 Write - SLOW          <---- #004
 ++++ 1.01 Transform - push:1
+++++ 1.01 Transform - next:0
+++++ 1.02 Transform
 ++++ 1.02 Transform - push:1
+++++ 1.02 Transform - next:0
+++++ 1.03 Transform
 ++++ 1.03 Transform - push:1
-++++ 1.04 Transform - push:0
------- 1.01 - 1:1 Write finished in 883, calling next()
-++++++ 1.02 Write
------- 1.02 - 1:2 Write finished in 947, calling next()
-++++ 1.05 Transform - push:0
-++++++ 1.03 Write
-++++ 2.01 Transform - push:0
------- 1.03 - 1:3 Write finished in 395, calling next()
-++++++ 1.04 Write
------- 1.04 - 1:4 Write finished in 757, calling next()
-++++ 2.02 Transform - push:0
-++++++ 1.05 Write
-++ 3 Read
-++ 3.01 Read Batch  push:0
-++ 3.02 Read Batch  push:0
-++ 3.03 Read Batch  push:0
-++ 3.04 Read Batch  push:0
-++ 3.05 Read Batch  push:0
+++++ 1.03 Transform - next:0
+++++ 1.04 Transform
+++++ 1.04 Transform - push:1
+++++ 1.04 Transform - next:0
+++++ 1.05 Transform
+++++ 1.05 Transform - push:1
+++++ 1.05 Transform - next:0
+++++ 2.01 Transform
+++++ 2.01 Transform - push:1
+++++ 2.01 Transform - next:0      <---- #005
+++ 3 Read                         <---- #006
+++ 3.01 Read Batch push:0
+++ 3.02 Read Batch push:0
+++ 3.03 Read Batch push:0
+++ 3.04 Read Batch push:0
+++ 3.05 Read Batch push:0
+++++ 2.02 Transform               <---- #007
+++++ 2.02 Transform - push:1
+++++ 2.02 Transform - next:0
+++++ 2.03 Transform
 ++++ 2.03 Transform - push:0
------- 1.05 - 1:5 Write finished in 307, calling next()
-++++++ 2.01 Write
------- 2.01 - 1:6 Write finished in 274, calling next()
+++++ 2.03 Transform - next:0
+++ 4 Read                         <---- #008
+++ 4.01 Read Batch push:0
+++ 4.02 Read Batch push:0
+++ 4.03 Read Batch push:0
+++ 4.04 Read Batch push:0
+++ 4.05 Read Batch push:0
+------ 1.01 - 1:1 Write finished in 1180, calling next()
+++++++ 1.02 Write
+------ 1.02 - 1:2 Write finished in 257, calling next()
+++++++ 1.03 Write
+------ 1.03 - 1:3 Write finished in 437, calling next()
+++++++ 1.04 Write
+------ 1.04 - 1:4 Write finished in 821, calling next()
+++++ 2.04 Transform
 ++++ 2.04 Transform - push:0
-++++++ 2.02 Write
+++++ 2.04 Transform - next:0
+++++++ 1.05 Write
+++++ 2.05 Transform
 ++++ 2.05 Transform - push:0
------- 2.02 - 1:7 Write finished in 182, calling next()
-++++++ 2.03 Write
------- 2.03 - 1:8 Write finished in 930, calling next()
+++++ 2.05 Transform - next:0
+++++ 3.01 Transform
 ++++ 3.01 Transform - push:0
-++++++ 2.04 Write
-++ 4 Read
-++ 4.01 Read Batch  push:0
-++ 4.02 Read Batch  push:0
-++ 4.03 Read Batch  push:0
-++ 4.04 Read Batch  push:0
-++ 4.05 Read Batch  push:0
+++++ 3.01 Transform - next:0
+++++ 3.02 Transform
 ++++ 3.02 Transform - push:0
------- 2.04 - 1:9 Write finished in 971, calling next()
-++++++ 2.05 Write
------- 2.05 - 1:10 Write finished in 697, calling next()
+++++ 3.02 Transform - next:0
+------ 1.05 - 1:5 Write finished in 482, calling next()
+++++++ 2.01 Write
+------ 2.01 - 1:6 Write finished in 761, calling next()
+++++++ 2.02 Write
+------ 2.02 - 1:7 Write finished in 899, calling next()
+++++++ 2.03 Write
+------ 2.03 - 1:8 Write finished in 113, calling next()
+++++ 3.03 Transform
 ++++ 3.03 Transform - push:0
-++++++ 3.01 Write - SLOW
+++++ 3.03 Transform - next:0
+++++++ 2.04 Write
+++++ 3.04 Transform
 ++++ 3.04 Transform - push:0
------- 3.01 - 1:11 Write finished in 1427, calling next()
-++++++ 3.02 Write
------- 3.02 - 1:12 Write finished in 600, calling next()
+++++ 3.04 Transform - next:0
+++++ 3.05 Transform
 ++++ 3.05 Transform - push:0
-++++++ 3.03 Write
+++++ 3.05 Transform - next:0
+++++ 4.01 Transform
 ++++ 4.01 Transform - push:0
------- 3.03 - 1:13 Write finished in 180, calling next()
-++++++ 3.04 Write
------- 3.04 - 1:14 Write finished in 853, calling next()
-++++ 4.02 Transform - push:0
-++++++ 3.05 Write
 ++ 5 Read
-++++++++++ READ End - Thu Dec 14 2017 09:04:51 GMT+0000 (STD)
+++++++++++ READ End - Wed Mar 07 2018 08:06:17 GMT+0000 (STD)
+++++ 4.01 Transform - next:0
+------ 2.04 - 1:9 Write finished in 548, calling next()
+++++++ 2.05 Write
+------ 2.05 - 1:10 Write finished in 250, calling next()
+++++++ 3.01 Write - SLOW
+------ 3.01 - 1:11 Write finished in 1606, calling next()
+++++++ 3.02 Write
+------ 3.02 - 1:12 Write finished in 151, calling next()
+++++ 4.02 Transform
+++++ 4.02 Transform - push:0
+++++ 4.02 Transform - next:0
+++++++ 3.03 Write
+++++ 4.03 Transform
 ++++ 4.03 Transform - push:0
------- 3.05 - 1:15 Write finished in 678, calling next()
-++++++ 4.01 Write - SLOW
------- 4.01 - 1:16 Write finished in 1178, calling next()
+++++ 4.03 Transform - next:0
+++++ 4.04 Transform
 ++++ 4.04 Transform - push:0
-++++++ 4.02 Write
+++++ 4.04 Transform - next:0
+++++ 4.05 Transform
 ++++ 4.05 Transform - push:0
-++++++++++ TRANSFORM Final - Thu Dec 14 2017 09:04:53 GMT+0000 (STD)
------- 4.02 - 1:17 Write finished in 240, calling next()
+++++ 4.05 Transform - next:0
+++++++++++ TRANSFORM Final - Wed Mar 07 2018 08:06:19 GMT+0000 (STD)
+------ 3.03 - 1:13 Write finished in 402, calling next()
+++++++ 3.04 Write - SLOW
+------ 3.04 - 1:14 Write finished in 1938, calling next()
+++++++ 3.05 Write
+------ 3.05 - 1:15 Write finished in 854, calling next()
+++++++ 4.01 Write
+------ 4.01 - 1:16 Write finished in 842, calling next()
+++++++ 4.02 Write
+------ 4.02 - 1:17 Write finished in 367, calling next()
 ++++++ 4.03 Write
------- 4.03 - 1:18 Write finished in 872, calling next()
-++++++ 4.04 Write
------- 4.04 - 1:19 Write finished in 516, calling next()
-++++++ 4.05 Write
------- 4.05 - 1:20 Write finished in 189, calling next()
-++++++++++ WRITE Final - Thu Dec 14 2017 09:04:54 GMT+0000 (STD)
+------ 4.03 - 1:18 Write finished in 994, calling next()
+++++++ 4.04 Write - SLOW
+------ 4.04 - 1:19 Write finished in 1836, calling next()
+++++++ 4.05 Write - SLOW
+------ 4.05 - 1:20 Write finished in 1821, calling next()
+++++++++++ WRITE Final - Wed Mar 07 2018 08:06:28 GMT+0000 (STD)
