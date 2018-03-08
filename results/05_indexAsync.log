@@ -1,0 +1,166 @@
+➜  streams101 git:(master) ✗ node 05_indexAsync.js
+
+++++++++++ READ Start - Thu Mar 08 2018 08:40:24 GMT+0000 (STD)
+++ 1 Read push:1
+++ 2 Read push:0
+++++ 1 Transform
+++++++ 1 Write
+       1 - 1:0 Write, Calling next()
+++++ 1 Transform - push:1
+++++ 1 Transform - next:0
+++ 3 Read push:0
+++++ 2 Transform
+++++++ 2 Write
+       2 - 2:0 Write, Calling next()
+++++ 2 Transform - push:1
+++++ 2 Transform - next:0
+++ 4 Read push:0
+++++ 3 Transform
+++++++ 3 Write
+       3 - 3:0 Write, Calling next()
+++++ 3 Transform - push:1
+++++ 3 Transform - next:0
+++ 5 Read push:0
+++++ 4 Transform
+++++++ 4 Write
+       4 - 4:0 Write, Calling next()
+++++ 4 Transform - push:1
+++++ 4 Transform - next:0
+++ 6 Read push:0
+++++ 5 Transform
+++++++ 5 Write
+       5 - 5:0 Write, Calling next()
+++++ 5 Transform - push:1
+++++ 5 Transform - next:0
+++ 7 Read push:0
+++++ 6 Transform
+++++++ 6 Write - SLOW
+       6 - 6:0 Write, Calling next()
+++++ 6 Transform - push:1
+++++ 6 Transform - next:0
+++ 8 Read push:0
+++++ 7 Transform
+++++++ 7 Write
+       7 - 7:0 Write, Calling next()
+++++ 7 Transform - push:1
+++++ 7 Transform - next:0
+++ 9 Read push:0
+++++ 8 Transform
+++++++ 8 Write
+       8 - 8:0 Write, Calling next()
+++++ 8 Transform - push:1
+++++ 8 Transform - next:0
+++ 10 Read push:0
+++++ 9 Transform
+++++++ 9 Write
+       9 - 9:0 Write, Calling next()
+++++ 9 Transform - push:1
+++++ 9 Transform - next:0
+++ 11 Read push:0
+++++ 10 Transform
+++++++ 10 Write
+       10 - 10:0 Write, Max concurrency reached
+++++ 10 Transform - push:1
+++++ 10 Transform - next:0
+++ 12 Read push:0
+++++ 11 Transform
+++++ 11 Transform - push:1
+++++ 11 Transform - next:0
+++ 13 Read push:0
+++++ 12 Transform
+++++ 12 Transform - push:1
+++++ 12 Transform - next:0
+++ 14 Read push:0
+++++ 13 Transform
+++++ 13 Transform - push:0
+++++ 13 Transform - next:0
+++ 15 Read push:0
+++ 16 Read push:0
+++ 17 Read push:0
+------ 1 - 9:1 Write finished in 176
+       1 - 9:1 Write, Next used
+------ 3 - 8:2 Write finished in 232
+       3 - 8:2 Write, Next used
+------ 5 - 7:3 Write finished in 245
+       5 - 7:3 Write, Next used
+------ 9 - 6:4 Write finished in 426
+       9 - 6:4 Write, Next used
+------ 10 - 5:5 Write finished in 660
+       10 - 5:5 Write, Calling next()
+++++++ 11 Write
+       11 - 6:5 Write, Calling next()
+++++ 14 Transform
+++++ 14 Transform - push:0
+++++ 14 Transform - next:0
+++++++ 12 Write
+       12 - 7:5 Write, Calling next()
+++++ 15 Transform
+++++ 15 Transform - push:0
+++ 18 Read push:0
+++ 19 Read push:0
+++++ 15 Transform - next:0
+++++++ 13 Write - SLOW
+       13 - 8:5 Write, Calling next()
+++++ 16 Transform
+++++ 16 Transform - push:0
+++++ 16 Transform - next:0
+++++++ 14 Write
+       14 - 9:5 Write, Calling next()
+++++ 17 Transform
+++++ 17 Transform - push:0
+++ 20 Read push:0
+++++++++++ READ End - Thu Mar 08 2018 08:40:25 GMT+0000 (STD)
+++++ 17 Transform - next:0
+++++++ 15 Write
+       15 - 10:5 Write, Max concurrency reached
+++++ 18 Transform
+++++ 18 Transform - push:0
+++++ 18 Transform - next:0
+------ 7 - 9:6 Write finished in 699
+       7 - 9:6 Write, Next used
+------ 8 - 8:7 Write finished in 734
+       8 - 8:7 Write, Next used
+------ 4 - 7:8 Write finished in 759
+       4 - 7:8 Write, Next used
+------ 12 - 6:9 Write finished in 174
+       12 - 6:9 Write, Next used
+------ 2 - 5:10 Write finished in 905
+       2 - 5:10 Write, Next used
+------ 11 - 4:11 Write finished in 456
+       11 - 4:11 Write, Next used
+------ 14 - 3:12 Write finished in 643
+       14 - 3:12 Write, Next used
+------ 15 - 2:13 Write finished in 808
+       15 - 2:13 Write, Calling next()
+++++++ 16 Write
+       16 - 3:13 Write, Calling next()
+++++ 19 Transform
+++++ 19 Transform - push:0
+++++ 19 Transform - next:0
+++++++ 17 Write
+       17 - 4:13 Write, Calling next()
+++++ 20 Transform
+++++ 20 Transform - push:0
+++++ 20 Transform - next:0
+++++++ 18 Write
+       18 - 5:13 Write, Calling next()
+++++++ 19 Write
+       19 - 6:13 Write, Calling next()
+++++++ 20 Write
+       20 - 7:13 Write, Calling next()
+++++++++++ TRANSFORM Final - Thu Mar 08 2018 08:40:26 GMT+0000 (STD)
+++++++++++ WRITE Final - Thu Mar 08 2018 08:40:26 GMT+0000 (STD)
+------ 6 - 6:14 Write finished in 1518
+       6 - 6:14 Write, Next used
+------ 18 - 5:15 Write finished in 262
+       18 - 5:15 Write, Next used
+------ 17 - 4:16 Write finished in 350
+       17 - 4:16 Write, Next used
+------ 16 - 3:17 Write finished in 476
+       16 - 3:17 Write, Next used
+------ 13 - 2:18 Write finished in 1354
+       13 - 2:18 Write, Next used
+------ 19 - 1:19 Write finished in 771
+       19 - 1:19 Write, Next used
+------ 20 - 0:20 Write finished in 936
+       20 - 0:20 Write, Next used

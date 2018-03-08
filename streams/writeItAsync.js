@@ -1,7 +1,7 @@
 const {Writable} = require("stream");
 const {GREEN, NO_COLOR, DARK} = require("../consoleColors");
 
-const MAX_LIMIT = 5;
+let maxConcurrency;
 
 
 const callAsync = function () {
@@ -12,7 +12,7 @@ const callAsync = function () {
     let nextUsed = false;
 
     function nextCallBack() {
-      if (inProgress >= MAX_LIMIT) {
+      if (inProgress >= maxConcurrency) {
         console.log(`${DARK}       ${obj.id} - ${inProgress}:${total} Write, Max concurrency reached${NO_COLOR}`);
       } else {
         if (!nextUsed) {
@@ -48,6 +48,7 @@ class WriteItAsync extends Writable {
   constructor(options) {
     options.objectMode = true;
     super(options);
+    maxConcurrency = options.maxConcurrency;
   }
 
   _write(obj, encoding, next) {
