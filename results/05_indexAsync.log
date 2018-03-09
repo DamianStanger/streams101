@@ -77,10 +77,10 @@
 ++ 15 Read push:0
 ++ 16 Read push:0
 ++ 17 Read push:0
------- 1 - 9:1 Write finished in 176
-       1 - 9:1 Write, Next used
------- 3 - 8:2 Write finished in 232
-       3 - 8:2 Write, Next used
+------ 3 - 9:1 Write finished in 176
+       3 - 9:1 Write, Next used
+------ 1 - 8:2 Write finished in 232
+       1 - 8:2 Write, Next used
 ------ 5 - 7:3 Write finished in 245
        5 - 7:3 Write, Next used
 ------ 9 - 6:4 Write finished in 426
