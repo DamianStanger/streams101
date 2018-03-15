@@ -1,14 +1,14 @@
 const {GREEN, NO_COLOR, DARK} = require("../consoleColors");
 
-const MAX_LIMIT = 5;
 
+function listenForData(readStream, options) {
 
-function listenForData(readStream) {
+  let maxConcurrency = options.maxConcurrency;
   let inProgress = 0;
   let total = 0;
 
   function runInProcessWatcher() {
-    if (inProgress >= MAX_LIMIT) {
+    if (inProgress >= maxConcurrency) {
       readStream.pause();
       console.log(`${DARK}            ${inProgress}:${total} Write pausing    0${NO_COLOR}`);
     } else {
