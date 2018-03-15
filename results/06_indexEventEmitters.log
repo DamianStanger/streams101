@@ -1,0 +1,146 @@
+➜  streams101 git:(master) ✗ node 06_indexEventEmitters.js
+
+++++++++++ READ Start - Thu Mar 15 2018 17:33:43 GMT+0000 (STD)
+++ 1 Read push:1
+++ 2 Read push:0
+++++ 1 Transform
+++++++ 1 Write
+            1:0 Write resumed    1
+++++ 1 Transform - push:1
+++++ 1 Transform - next:0
+++ 3 Read push:0
+++++ 2 Transform
+++++++ 2 Write
+            2:0 Write resumed    1
+++++ 2 Transform - push:1
+++++ 2 Transform - next:0
+++ 4 Read push:0
+++++ 3 Transform
+++++++ 3 Write
+            3:0 Write resumed    1
+++++ 3 Transform - push:1
+++++ 3 Transform - next:0
+++ 5 Read push:0
+++++ 4 Transform
+++++++ 4 Write
+            4:0 Write resumed    1
+++++ 4 Transform - push:1
+++++ 4 Transform - next:0
+++ 6 Read push:0
+++++ 5 Transform
+++++++ 5 Write
+            5:0 Write resumed    1
+++++ 5 Transform - push:1
+++++ 5 Transform - next:0
+++ 7 Read push:0
+++++ 6 Transform
+++++++ 6 Write
+            6:0 Write resumed    1
+++++ 6 Transform - push:1
+++++ 6 Transform - next:0
+++ 8 Read push:0
+++++ 7 Transform
+++++++ 7 Write
+            7:0 Write resumed    1
+++++ 7 Transform - push:1
+++++ 7 Transform - next:0
+++ 9 Read push:0
+++++ 8 Transform
+++++++ 8 Write
+            8:0 Write resumed    1
+++++ 8 Transform - push:1
+++++ 8 Transform - next:0
+++ 10 Read push:0
+++++ 9 Transform
+++++++ 9 Write
+            9:0 Write resumed    1
+++++ 9 Transform - push:1
+++++ 9 Transform - next:0
+++ 11 Read push:0
+++++ 10 Transform
+++++++ 10 Write
+            10:0 Write pausing    0
+++++ 10 Transform - push:1
+++++ 10 Transform - next:0
+++ 12 Read push:0
+++++ 11 Transform
+++++ 11 Transform - push:1
+++++ 11 Transform - next:0
+++ 13 Read push:0
+++++ 12 Transform
+++++ 12 Transform - push:0
+++++ 12 Transform - next:0
+++ 14 Read push:0
+++ 15 Read push:0
+++ 16 Read push:0
+------ 6 - 9:1 Write finished in 150, resumed    1
+++++ 13 Transform
+++++ 13 Transform - push:0
+++++ 13 Transform - next:0
+++++++ 11 Write
+            10:1 Write pausing    0
+------ 8 - 9:2 Write finished in 209, resumed    1
+++++ 14 Transform
+++++ 14 Transform - push:0
+++ 17 Read push:0
+++ 18 Read push:0
+++++ 14 Transform - next:0
+++++++ 12 Write
+            10:2 Write pausing    0
+------ 10 - 9:3 Write finished in 335, resumed    1
+++++ 15 Transform
+++++ 15 Transform - push:0
+++++ 15 Transform - next:0
+++++++ 13 Write
+            10:3 Write pausing    0
+------ 9 - 9:4 Write finished in 446, resumed    1
+++++ 16 Transform
+++++ 16 Transform - push:0
+++ 19 Read push:0
+++ 20 Read push:0
+++++ 16 Transform - next:0
+++++++ 14 Write - SLOW
+            10:4 Write pausing    0
+------ 2 - 9:5 Write finished in 511, resumed    1
+++++ 17 Transform
+++++ 17 Transform - push:0
+++++ 17 Transform - next:0
+++++++ 15 Write
+            10:5 Write pausing    0
+------ 13 - 9:6 Write finished in 213, resumed    1
+++++ 18 Transform
+++++ 18 Transform - push:0
+++++++++++ READ End - Thu Mar 15 2018 17:33:44 GMT+0000 (STD)
+++++ 18 Transform - next:0
+++++++ 16 Write
+            10:6 Write pausing    0
+------ 7 - 9:7 Write finished in 759, resumed    1
+++++ 19 Transform
+++++ 19 Transform - push:0
+++++ 19 Transform - next:0
+++++++ 17 Write - SLOW
+            10:7 Write pausing    0
+------ 11 - 9:8 Write finished in 624, resumed    1
+++++ 20 Transform
+++++ 20 Transform - push:0
+++++ 20 Transform - next:0
+++++++ 18 Write
+            10:8 Write pausing    0
+++++++++++ TRANSFORM Final - Thu Mar 15 2018 17:33:44 GMT+0000 (STD)
+------ 1 - 9:9 Write finished in 840, resumed    1
+++++++ 19 Write
+            10:9 Write pausing    0
+------ 3 - 9:10 Write finished in 842, resumed    1
+++++++ 20 Write
+            10:10 Write pausing    0
+++++++++++ WRITE Final - Thu Mar 15 2018 17:33:44 GMT+0000 (STD)
+------ 5 - 9:11 Write finished in 889, resumed    1
+------ 15 - 8:12 Write finished in 420, resumed    1
+------ 4 - 7:13 Write finished in 935, resumed    1
+------ 12 - 6:14 Write finished in 985, resumed    1
+------ 19 - 5:15 Write finished in 364, resumed    1
+------ 18 - 4:16 Write finished in 551, resumed    1
+------ 16 - 3:17 Write finished in 803, resumed    1
+------ 20 - 2:18 Write finished in 662, resumed    1
+------ 14 - 1:19 Write finished in 1405, resumed    1
+------ 17 - 0:20 Write finished in 1758, resumed    1
