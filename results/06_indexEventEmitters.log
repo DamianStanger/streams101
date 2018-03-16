@@ -5,7 +5,7 @@
 ++ 2 Read push:0
 ++++ 1 Transform
 ++++++ 1 Write
-            1:0 Write resumed    1
+            1:0 Write resumed    1                      <---- #001
 ++++ 1 Transform - push:1
 ++++ 1 Transform - next:0
 ++ 3 Read push:0
@@ -59,7 +59,7 @@
 ++ 11 Read push:0
 ++++ 10 Transform
 ++++++ 10 Write
-            10:0 Write pausing    0
+            10:0 Write pausing    0                      <---- #002
 ++++ 10 Transform - push:1
 ++++ 10 Transform - next:0
 ++ 12 Read push:0
@@ -72,7 +72,7 @@
 ++++ 12 Transform - next:0
 ++ 14 Read push:0
 ++ 15 Read push:0
-++ 16 Read push:0
+++ 16 Read push:0                                        <---- #003
 ------ 6 - 9:1 Write finished in 150, resumed    1
 ++++ 13 Transform
 ++++ 13 Transform - push:0
@@ -134,7 +134,7 @@
 ++++++ 20 Write
             10:10 Write pausing    0
 ++++++++++ WRITE Final - Thu Mar 15 2018 17:33:44 GMT+0000 (STD)
------- 5 - 9:11 Write finished in 889, resumed    1
+------ 5 - 9:11 Write finished in 889, resumed    1                 <---- #004
 ------ 15 - 8:12 Write finished in 420, resumed    1
 ------ 4 - 7:13 Write finished in 935, resumed    1
 ------ 12 - 6:14 Write finished in 985, resumed    1
