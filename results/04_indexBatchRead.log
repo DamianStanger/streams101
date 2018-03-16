@@ -49,7 +49,7 @@
 ++ 4.03 Read Batch push:0
 ++ 4.04 Read Batch push:0
 ++ 4.05 Read Batch push:0
------- 1.01 - 1:1 Write finished in 1180, calling next()
+------ 1.01 - 1:1 Write finished in 1180, calling next()   <---- #009
 ++++++ 1.02 Write
 ------ 1.02 - 1:2 Write finished in 257, calling next()
 ++++++ 1.03 Write
