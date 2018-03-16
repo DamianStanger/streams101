@@ -1,7 +1,7 @@
 ➜  streams101 git:(master) ✗ node 05_indexAsync.js
 
 ++++++++++ READ Start - Thu Mar 08 2018 08:40:24 GMT+0000 (STD)
-++ 1 Read push:1
+++ 1 Read push:1                                            <---- #001
 ++ 2 Read push:0
 ++++ 1 Transform
 ++++++ 1 Write
@@ -59,7 +59,7 @@
 ++ 11 Read push:0
 ++++ 10 Transform
 ++++++ 10 Write
-       10 - 10:0 Write, Max concurrency reached
+       10 - 10:0 Write, Max concurrency reached             <---- #002
 ++++ 10 Transform - push:1
 ++++ 10 Transform - next:0
 ++ 12 Read push:0
@@ -76,8 +76,8 @@
 ++++ 13 Transform - next:0
 ++ 15 Read push:0
 ++ 16 Read push:0
-++ 17 Read push:0
------- 3 - 9:1 Write finished in 176
+++ 17 Read push:0                                           <---- #003
+------ 3 - 9:1 Write finished in 176                        <---- #004
        3 - 9:1 Write, Next used
 ------ 1 - 8:2 Write finished in 232
        1 - 8:2 Write, Next used
@@ -86,7 +86,7 @@
 ------ 9 - 6:4 Write finished in 426
        9 - 6:4 Write, Next used
 ------ 10 - 5:5 Write finished in 660
-       10 - 5:5 Write, Calling next()
+       10 - 5:5 Write, Calling next()                       <---- #006
 ++++++ 11 Write
        11 - 6:5 Write, Calling next()
 ++++ 14 Transform
@@ -112,11 +112,11 @@
 ++++++++++ READ End - Thu Mar 08 2018 08:40:25 GMT+0000 (STD)
 ++++ 17 Transform - next:0
 ++++++ 15 Write
-       15 - 10:5 Write, Max concurrency reached
+       15 - 10:5 Write, Max concurrency reached             <---- #007
 ++++ 18 Transform
 ++++ 18 Transform - push:0
 ++++ 18 Transform - next:0
------- 7 - 9:6 Write finished in 699
+------ 7 - 9:6 Write finished in 699                        <---- #008
        7 - 9:6 Write, Next used
 ------ 8 - 8:7 Write finished in 734
        8 - 8:7 Write, Next used
@@ -130,7 +130,7 @@
        11 - 4:11 Write, Next used
 ------ 14 - 3:12 Write finished in 643
        14 - 3:12 Write, Next used
------- 15 - 2:13 Write finished in 808
+------ 15 - 2:13 Write finished in 808                      <---- #009
        15 - 2:13 Write, Calling next()
 ++++++ 16 Write
        16 - 3:13 Write, Calling next()
