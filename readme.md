@@ -10,4 +10,4 @@ node 06_indexEventEmitters.js
 
 Example result logs can be found in the results folder.
 
-The blog post that accompanies this repo can be found at: https://foldingair.blogspot.nl/2018/03/understanding-node-stream-api-through.html
+The blog post that accompanies this repo can be found at - https://foldingair.blogspot.co.uk/2018/03/understanding-node-stream-api-through.html
